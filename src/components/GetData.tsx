@@ -30,7 +30,6 @@ interface IBus {
 function GetData() {
     
     const [showResults, setShowResults] = useState(false);
-    const [siteId, setSiteId] = useState(" ");
     const [stops, setStops] = useState<IStop[]>()
     const [buses, setBuses] = useState<IBus[]>()
     const [metros, setMetros] = useState<IBus[]>()
@@ -69,15 +68,14 @@ function GetData() {
         axios.get(apilink)
         .then(function (response) {
             console.log(response.data.ResponseData[0].SiteId)
-            setSiteId(response.data.ResponseData[0].SiteId);
-            showDepartures()
+            showDepartures(response.data.ResponseData[0].SiteId)
           })
           .catch(function (error) {
             console.log(error);
           })
     }
 
-    function showDepartures () {
+    function showDepartures (siteId: string) {
         let apilink = `/api/departures/${siteId}`;
         axios.get(apilink)
         .then(function (response) {
