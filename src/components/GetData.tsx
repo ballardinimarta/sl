@@ -40,8 +40,7 @@ function GetData() {
         setIsLoading(true);
 
         window.navigator.geolocation.getCurrentPosition((pos)=> {
-            //getStops(pos.coords.latitude, pos.coords.longitude);
-            getStops(59.3097497,18.0197013);
+            getStops(pos.coords.latitude, pos.coords.longitude);
             
        }, (error)=> {
             console.log(error);
