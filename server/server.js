@@ -1,5 +1,6 @@
 const express = require('express');
 const axios = require('axios');
+const path = require('path')
 
 const app = express();
 
@@ -8,7 +9,13 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/stops/:lat/:long',async (req, res, next) => {
+app.use(express.static(path.join(__dirname, '../build')))
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build'))
+})
+
+
+app.get('/api/stops/:lat/:long',async (req, res, next) => {
     const lat = req.params.lat
     const long = req.params.long
     try {
@@ -21,7 +28,7 @@ app.get('/stops/:lat/:long',async (req, res, next) => {
     }
 });
 
-app.get('/stop/:name', async (req, res) => {
+app.get('/api/stop/:name', async (req, res) => {
     const name = req.params.name
     try {
         const response = await axios.get(`https://api.sl.se/api2/typeahead.json?key=af6c93f932084ff68c9c95ded0ea2502&searchstring=${name}&stationsonly=true&maxresults=1`)
@@ -33,7 +40,7 @@ app.get('/stop/:name', async (req, res) => {
     }
 })
 
-app.get('/departures/:siteid', async (req, res) => {
+app.get('/api/departures/:siteid', async (req, res) => {
     const siteid = req.params.siteid
     
     try {

@@ -49,7 +49,7 @@ function GetData() {
     }
 
     function getStops (lat: number, long: number) {
-        let apilink = `http://localhost:8000/stops/${lat}/${long}`;
+        let apilink = `/api/stops/${lat}/${long}`;
         console.log(apilink);
 
         axios.get(apilink)
@@ -66,7 +66,7 @@ function GetData() {
     }
 
     function findSiteId(name: string) {
-        let apilink = `http://localhost:8000/stop/${name}`;
+        let apilink = `/api/stop/${name}`;
         axios.get(apilink)
         .then(function (response) {
             console.log(response.data.ResponseData[0].SiteId)
@@ -79,7 +79,7 @@ function GetData() {
     }
 
     function showDepartures () {
-        let apilink = `http://localhost:8000/departures/${siteId}`;
+        let apilink = `/api/departures/${siteId}`;
         axios.get(apilink)
         .then(function (response) {
             console.log(response.data.ResponseData)
