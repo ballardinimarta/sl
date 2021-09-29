@@ -1,0 +1,128 @@
+@font-face {
+    font-family: "SL";
+    src: url("./assets/fonts/dac9ebe7537ff82d3a2a91933ce09067.woff2") format("woff2"),
+         url("./assets/fonts/e13475e569976c5106fa11eaa52a46b1.woff2") format("woff2");
+}
+
+html {
+    
+    
+    body {
+        
+        background-image: url("./assets/linus-mimietz-kNWUoq0-jWM-unsplash.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        font-family: 'SL', sans-serif;
+        min-height: 100vh;
+
+        .App {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            #find{
+                #findbutton {
+                    font-family: inherit;
+                    font-size: 120%;
+                    margin: 40px 0px;
+                    background-color: #0c71bf;
+                    color: #edeff1;
+                    padding: 10px 25px;
+                    border-radius: 20px;
+                    border: 1px solid #0c71bf;
+                    transition: .2s;
+                    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
+
+                }
+                #findbutton:active,
+                #findbutton:hover {
+                    background-color: #edeff1;
+                    color: #0c71bf;
+                    border: 1px solid #0c71bf;
+    
+                }
+            }
+            #stops {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                button {
+                    font-size: 120%;
+                    font-family: inherit;
+                    margin: 10px 0px;
+                    background-color: #edeff1;
+                    color: #0c71bf;
+                    padding: 10px 25px;
+                    border-radius: 20px;
+                    border: 1px solid #0c71bf;
+                    transition: .2s;
+                    box-shadow: 0px 5px 0px #0c71bf;
+                }
+                button:active {
+                    box-shadow: 0;
+                    transform: translateY(5px);
+                    box-shadow: 0px 0px 0px #0c71bf;
+
+                }
+                button:hover {
+                    background-color: #0c71bf;
+                    color: #edeff1;
+                }
+            }
+            #results {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-start;
+                @media only screen and (max-width: 600px) {
+                    flex-direction: column;
+                    align-items: center;
+
+                }
+    
+                div {
+                    background-color: white;
+                    margin: 10px;
+                    padding: 15px;
+                    border-radius: 7.5px;
+                    @media only screen and (max-width: 600px) {
+                        width: 80%;
+                    }
+                    .title {
+                        font-weight: 700;
+                        font-size: 120%;
+                    }
+                    div {
+                        @media only screen and (max-width: 600px) {
+                            font-size: 80%;
+                        }
+                        .line {
+                            width: 15%;
+                            padding: 10px;
+                            color: white;
+                            border-radius: 10px;
+                            margin: 5px;
+                        }
+    
+                        .destination {
+                            margin: 5px;
+                        }
+                        .time {
+                            margin: 5px;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+            
+            
+        }
+       
+    }
+}
