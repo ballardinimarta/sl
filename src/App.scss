@@ -36,16 +36,23 @@ html {
                     border-radius: 20px;
                     border: 1px solid #0c71bf;
                     transition: .2s;
-                    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
+                    box-shadow: 0px 8px 2px #132c5a;
+
+                    // box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
+
 
                 }
-                #findbutton:active,
-                #findbutton:hover {
-                    background-color: #edeff1;
-                    color: #0c71bf;
-                    border: 1px solid #0c71bf;
-    
+                #findbutton:active {
+                    box-shadow: 0px 3px 2px #132c5a;
+                    transform: translateY(5px);
                 }
+
+                // #findbutton:hover {
+                //     background-color: #edeff1;
+                //     color: #0c71bf;
+                //     border: 1px solid #0c71bf;
+    
+                // }
             }
             #stops {
                 display: flex;
@@ -62,12 +69,11 @@ html {
                     border-radius: 20px;
                     border: 1px solid #0c71bf;
                     transition: .2s;
-                    box-shadow: 0px 5px 0px #0c71bf;
+                    box-shadow: 0px 8px 0px #094e83;
                 }
                 button:active {
-                    box-shadow: 0;
+                    box-shadow: 0px 3px 2px #08528a;
                     transform: translateY(5px);
-                    box-shadow: 0px 0px 0px #0c71bf;
 
                 }
                 button:hover {
@@ -91,14 +97,23 @@ html {
                     margin: 10px;
                     padding: 15px;
                     border-radius: 7.5px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
                     @media only screen and (max-width: 600px) {
                         width: 80%;
                     }
                     .title {
                         font-weight: 700;
                         font-size: 120%;
+
                     }
                     div {
+                        padding: 10px;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: space-evenly;
                         @media only screen and (max-width: 600px) {
                             font-size: 80%;
                         }
@@ -114,6 +129,7 @@ html {
                             margin: 5px;
                         }
                         .time {
+                            min-width: 50px;
                             margin: 5px;
                             font-weight: 700;
                         }
