@@ -1,7 +1,8 @@
 import React from "react";
-import { IBus } from "../interfaces/IBus";
+import { Departure } from "./StopButtons";
+
 interface IBusesProps {
-  departures: IBus[];
+  departures: Departure[];
 }
 function Buses(props: IBusesProps) {
   return (
@@ -11,24 +12,24 @@ function Buses(props: IBusesProps) {
 
       {props.departures?.map((bus) => {
         return (
-          <div key={bus.JourneyNumber}>
-            {bus.GroupOfLine === "blåbuss" ? (
+          <div key={bus.journey.id}>
+            {bus.line.group_of_lines === "blåbuss" ? (
               <span
                 className="line"
                 style={{ backgroundColor: "rgb(0, 64, 154)" }}
               >
-                {bus.LineNumber}
+                {bus.line.designation}
               </span>
             ) : (
               <span
                 className="line"
                 style={{ backgroundColor: "rgb(164, 17, 44)" }}
               >
-                {bus.LineNumber}
+                {bus.line.designation}
               </span>
             )}
-            <span className="destination">{bus.Destination}</span>
-            <span className="time">{bus.DisplayTime}</span>
+            <span className="destination">{bus.destination}</span>
+            <span className="time">{bus.display}</span>
           </div>
         );
       })}

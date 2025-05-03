@@ -1,7 +1,8 @@
 import React from "react";
-import { IBus } from "../interfaces/IBus";
+import { Departure } from "./StopButtons";
+
 interface ITramsProps {
-  departures: IBus[];
+  departures: Departure[];
 }
 function Trams(props: ITramsProps) {
   return (
@@ -10,15 +11,15 @@ function Trams(props: ITramsProps) {
       {props.departures?.length === 0 && <p>Inga tvärbanor just nu</p>}
       {props.departures?.map((tram) => {
         return (
-          <div key={tram.JourneyNumber}>
+          <div key={tram.journey.id}>
             <span
               className="line"
               style={{ backgroundColor: "rgb(164,165,167)" }}
             >
-              {tram.LineNumber}
+              {tram.line.designation}
             </span>
-            <span className="destination">{tram.Destination}</span>
-            <span className="time">{tram.DisplayTime}</span>
+            <span className="destination">{tram.destination}</span>
+            <span className="time">{tram.display}</span>
           </div>
         );
       })}
