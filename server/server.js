@@ -46,7 +46,7 @@ app.get("/api/departures/:siteid", async (req, res) => {
 
   try {
     const response = await axios.get(
-      `https://transport.integration.sl.se/v1/sites/${siteid}/departures`
+      `https://transport.integration.sl.se/v1/sites/${siteid}/departures?forecast=30`
     );
     console.log(response);
     res.json(response.data);

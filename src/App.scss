@@ -27,7 +27,7 @@ html {
         #findbutton {
           font-family: inherit;
           font-size: 120%;
-          margin: 40px 0px;
+          margin: 20px 0px;
           background-color: #0c71bf;
           color: #edeff1;
           padding: 10px 25px;
@@ -87,6 +87,7 @@ html {
         @media only screen and (max-width: 600px) {
           flex-direction: column;
           align-items: center;
+          width: 100%;
         }
 
         div {
