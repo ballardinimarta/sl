@@ -24,7 +24,7 @@ function FindLocation() {
 
     window.navigator.geolocation.getCurrentPosition(
       (pos) => {
-        getStops(pos.coords.latitude, pos.coords.longitude);
+        getStops(59.3107819, 18.0186219);
       },
       (error) => {
         console.log(error);

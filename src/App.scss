@@ -51,9 +51,11 @@ html {
         // }
       }
       #stops {
+        width: 80%;
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        flex-wrap: wrap;
+        justify-content: start;
         gap: 10px;
         align-items: center;
         button {
@@ -103,20 +105,17 @@ html {
             font-size: 120%;
           }
           div {
+            width: 100%;
             padding: 10px;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-evenly;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
             @media only screen and (max-width: 600px) {
               font-size: 80%;
             }
             .line {
-              width: 15%;
               padding: 10px;
               color: white;
               border-radius: 10px;
-              margin: 5px;
             }
 
             .destination {

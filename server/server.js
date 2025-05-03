@@ -19,7 +19,7 @@ app.get("/api/stops/:lat/:long", async (req, res, next) => {
   const long = req.params.long;
   try {
     const response = await axios.get(
-      `https://journeyplanner.integration.sl.se/v1/nearbystopsv2.json?key=TRAFIKLAB-SLAPI-INTEGRATION-2024&originCoordLat=${lat}&originCoordLong=${long}&maxNo=5&r=1000&stationsonly=true`
+      `https://journeyplanner.integration.sl.se/v1/nearbystopsv2.json?key=TRAFIKLAB-SLAPI-INTEGRATION-2024&originCoordLat=${lat}&originCoordLong=${long}&maxNo=5&r=1000&stationsonly=true&products=14`
     );
     console.log(response.data);
     res.json(response.data);
